@@ -9,45 +9,53 @@
 
     <TextView
         android:id="@+id/outText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="218dp"
         android:layout_marginTop="100dp"
         android:text="Code Challenge"
         android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.474" />
+        app:layout_constraintVertical_bias="0.283" />
 
     <Button
         android:id="@+id/btnOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:onClick="buttonHandler"
         android:text="Ok"
-        tools:layout_editor_absoluteX="282dp"
-        tools:layout_editor_absoluteY="174dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/inputText"
+        app:layout_constraintStart_toEndOf="@+id/inputText"
+        app:layout_constraintTop_toTopOf="@+id/inputText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/inputText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="text"
         android:text="TESTNAME"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="87dp"
-        tools:layout_editor_absoluteY="174dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/calculateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="207dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="100dp"
         android:onClick="Calculate"
-        android:text="Caluculate"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="516dp"
+        app:layout_constraintEnd_toEndOf="@+id/outText"
+        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintStart_toStartOf="@+id/outText"
+        app:layout_constraintTop_toBottomOf="@+id/outText"
         tools:text="calculate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
