@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         double version = 3.14159;
         int year = 2024;
-        String author = "Samuel";
+        String author = "Samuel.";
 
         Math.pow(4, 2); // 16
 
