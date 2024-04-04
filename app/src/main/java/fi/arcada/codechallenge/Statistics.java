@@ -46,7 +46,41 @@ public class Statistics {
 
 
 
+    public static double calcLq(ArrayList<Double> values)  {
+            ArrayList<Double> sorted = new ArrayList<>(values);
+            Collections.sort(sorted);
+
+            double lowIndex = sorted.size() * 0.25;
+
+            if (sorted.size() % 2 == 0) {
+                int lowIndexInt = (int) lowIndex;
+                return (sorted.get(lowIndexInt - 1) + sorted.get(lowIndexInt)) / 2.0;
+            } else {
+                return sorted.get((int) lowIndex);
+            }
+        }
 
 
 
-}
+    public static double calcHq(ArrayList<Double> values)  {
+        ArrayList<Double> sorted = new ArrayList<>(values);
+        Collections.sort(sorted);
+
+        double highIndex = sorted.size() * 0.75;
+
+
+        if (sorted.size() % 2 == 0) {
+            int highIndexInt = (int) highIndex;
+            return (sorted.get(highIndexInt + 1) + sorted.get(highIndexInt)) / 2.0;
+        } else {
+            return sorted.get((int) highIndex);
+        }
+    }
+
+    public static double calcIQR(ArrayList<Double> values) {
+        double lowerQuartile = calcLq(values);
+        double upperQuartile = calcHq(values);
+        return upperQuartile - lowerQuartile;
+    }
+
+    }
