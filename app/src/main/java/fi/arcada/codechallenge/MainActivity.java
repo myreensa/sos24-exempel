@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     TextView value1;
     TextView value2;
     TextView value3;
-    TextView combinedPercentage; // procent för barn
+    TextView combinedPercentage; // procent för barn.
 
     TextView combinedPercentage1; // procent vuxna
 
