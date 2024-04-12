@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
     TextView value1;
     TextView value2;
     TextView value3;
-    TextView combinedPercentage;
+    TextView combinedPercentage; // procent för barn
 
-    TextView combinedPercentage1;
+    TextView combinedPercentage1; // procent vuxna
 
-    TextView chiSquareResultTextView;
+    TextView chiSquareResultTextView; // chi resultatet
 
 
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         count++;
         value.setText(String.valueOf(count));
         calculateAndDisplayPercentage();
-        calculateAndDisplayPercentageForCount3();
+        calculateAndDisplayPercentageForA();
         calculateAndDisplayChiSquareResult();
 
     }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         count1++;
         value1.setText(String.valueOf(count1));
         calculateAndDisplayPercentage();
-        calculateAndDisplayPercentageForCount3();
+        calculateAndDisplayPercentageForA();
         calculateAndDisplayChiSquareResult();
 
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     public void increment3(View v) {
         count3++;
         value3.setText(String.valueOf(count3));
-        calculateAndDisplayPercentageForCount3();
+        calculateAndDisplayPercentageForA();
         calculateAndDisplayChiSquareResult();
 
 
@@ -112,8 +112,9 @@ public class MainActivity extends AppCompatActivity {
         value2.setText(String.valueOf(count2));
         value3.setText(String.valueOf(count3));
         calculateAndDisplayPercentage();
-        calculateAndDisplayPercentageForCount3();
+        calculateAndDisplayPercentageForA();
         calculateAndDisplayChiSquareResult();
+        // reset knapp funktion
 
 
     }
@@ -123,13 +124,15 @@ public class MainActivity extends AppCompatActivity {
         if (totalCount == 0) {
             combinedPercentage.setText("% av barn");
         } else {
-            double percentage = ((double) count1 / totalCount) * 100.0; // Corrected division
+            double percentage = ((double) count1 / totalCount) * 100.0;
             combinedPercentage.setText(String.format("%.2f%%", percentage));
         }
 
     }
 
-    private void calculateAndDisplayPercentageForCount3() {
+    // Bara percentage är för barn
+
+    private void calculateAndDisplayPercentageForA() {
         int totalCount = count + count3;
         if (totalCount == 0) {
             combinedPercentage1.setText("% av vuxna");
@@ -138,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
             combinedPercentage1.setText(String.format("%.2f%%", percentage));
         }
     }
+
+    // ForA ar variabel namn for adults representerar alltså för vuxna
 
     private void calculateAndDisplayChiSquareResult() {
         double count4 = 0;
